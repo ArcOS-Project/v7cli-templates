@@ -1,0 +1,4 @@
+/* Scope CSS of your app by prefixing selectors with the app ID: */
+#{{id}} > div.body {
+	padding: 15px;
+}
