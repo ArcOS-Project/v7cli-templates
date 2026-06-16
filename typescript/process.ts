@@ -1,13 +1,20 @@
 const html = await loadHtml("body.html");
 
 class proc extends ThirdPartyAppProcess {
-  constructor(pid: number, parentPid: number, app: AppProcessData, operationId: string, workingDirectory: string, ...args) {
+  constructor(
+    pid: number,
+    parentPid: number,
+    app: AppProcessData,
+    operationId: string,
+    workingDirectory: string,
+    ...args: any[]
+  ) {
     super(pid, parentPid, app, operationId, workingDirectory);
   }
 
   async render(): Promise<void> {
-    const body = this.getBody()! as HTMLDivElement;
-    body.innerHTML = html;
+    const body = this.getBody();
+    body.innerHTML = html ?? "Failed to load HTML content.";
 
     /* Do some interesting stuff here */
     this.myAmazingFunction();
