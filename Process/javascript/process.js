@@ -4,7 +4,7 @@ class proc extends ThirdPartyProcess {
     super(pid, parentPid, app, operationId, workingDirectory);
   }
 
-  async start() {
+  async onStarted() {
     /* Do some interesting stuff here */
     this.myAmazingFunction();
   }

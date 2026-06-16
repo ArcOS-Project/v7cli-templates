@@ -10,7 +10,7 @@ class proc extends ThirdPartyProcess {
     super(pid, parentPid, app, operationId, workingDirectory);
   }
 
-  async start(): Promise<any> {
+  async onStarted(): Promise<any> {
     /* Do some interesting stuff here */
     this.myAmazingFunction();
   }
